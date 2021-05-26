@@ -8,37 +8,37 @@ a simple typescript octree implementation based on threejs（一种简单的基�
 
 
 
-let min = new THREE.Vector3(0, 0, 0);
+let min = new THREE.Vector3(0, 0, 0); // 下限
 
-let max = new THREE.Vector3(40, 40, 40);
+let max = new THREE.Vector3(40, 40, 40); // 上限
 
-let octree = new Octree(min, max, 5);
+let octree = new Octree(min, max, 5); // 下限, 上限, 深度
 
-let octreeHelper = new OctreeFroObject3d(octree);
+let octreeHelper = new OctreeFroObject3d(octree); // 辅助创建object3d八叉树
 
-let octreePainter = new OctreePainter(octree, scene);
+let octreePainter = new OctreePainter(octree, scene); // 绘制八叉树
 
 // let objs = new Array<THREE.Object3d>();
 
 objs.forEach(obj => {
 
-  octreeHelper.add(obj);
+  octreeHelper.add(obj); // 添加对象
   
 });
 
-octreePainter.drawRoot(true);
+octreePainter.drawRoot(true); // 绘制八叉树
 
 //
-// let octdata = octree.raycast(ray);
+// let octdata = octree.raycast(ray); // 投射
 
 // octdata.forEach(octd => {
 
-//    let obj = (octd.data as THREE.Object3d)
+//    let obj = (octd.data as THREE.Object3d) // 相交的每个对象执行操作
 
 // });
 
 
 
-// octree.intersect(abox, octree.root);
+// octree.intersect(abox, octree.root); // 与box相交的
 
-// octree.intersect(afrustum, octree.root);
+// octree.intersect(afrustum, octree.root); // 与frustum相交的
