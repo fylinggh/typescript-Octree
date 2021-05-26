@@ -24,6 +24,10 @@ objs.forEach(obj => {
 
   octreeHelper.add(obj); // 添加对象
   
+  //或
+  
+  //octree.addTo(octree.createOctData(obj.box, obj)); // 添加对象
+  
 });
 
 octreePainter.drawRoot(true); // 绘制八叉树
